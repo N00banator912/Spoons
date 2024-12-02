@@ -12,6 +12,7 @@ var isMedicated = false;	# Has the player taken medicine since the previous day?
 var hasEaten = false;		# Has the player eaten since the previous day?
 var FoodQuality = 1.0;		# Player's average food quality
 var House; 					# The Player's house, will affect how well they sleep and other effects on max spoons
+var Gold = 0;				# The Player's current amount of Gold
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
