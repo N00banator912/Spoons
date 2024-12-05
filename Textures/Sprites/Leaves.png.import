@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drplopwjeqvst"
-path="res://.godot/imported/Seeds_Carrot.png-438b1fa9877fb7f7a585baae3df02fbe.ctex"
+uid="uid://dwvau16qggohx"
+path="res://.godot/imported/Leaves.png-15b58ea714faebf727ed711edae75cf7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/Items/Seeds_Carrot.png"
-dest_files=["res://.godot/imported/Seeds_Carrot.png-438b1fa9877fb7f7a585baae3df02fbe.ctex"]
+source_file="res://Textures/Sprites/Leaves.png"
+dest_files=["res://.godot/imported/Leaves.png-15b58ea714faebf727ed711edae75cf7.ctex"]
 
 [params]
 
