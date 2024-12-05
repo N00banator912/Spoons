@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=35 format=3 uid="uid://bx847j7mpcdbe"]
+[gd_resource type="TileSet" load_steps=35 format=3 uid="uid://p4hn6jmabwlp"]
 
 [ext_resource type="Texture2D" uid="uid://dbck25ms8kwwe" path="res://Textures/Sprites/Cobble.png" id="1_2ag1c"]
 [ext_resource type="Texture2D" uid="uid://kbv8jw4ohmfk" path="res://Textures/Sprites/CornerMask.png" id="2_rjmrs"]
@@ -60,16 +60,19 @@ texture_region_size = Vector2i(32, 32)
 texture = ExtResource("7_1hwgo")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9.5, -16, 9.75, -16, 10, 16, -9.25, 16)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jsfii"]
 texture = ExtResource("8_svyfg")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8.97969, -16, 9.26031, -16, 9.82154, 16, -8.97969, 16)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h07qm"]
 texture = ExtResource("9_nxl2w")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9.75, -16, -10, 16, 9.25, 16, 10, -16)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pc353"]
 texture = ExtResource("7_fgl71")
@@ -114,6 +117,8 @@ texture_region_size = Vector2i(32, 32)
 
 [resource]
 tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 4
+physics_layer_0/collision_mask = 5
 sources/0 = SubResource("TileSetAtlasSource_x52ub")
 sources/1 = SubResource("TileSetAtlasSource_1ve4l")
 sources/2 = SubResource("TileSetAtlasSource_pc353")
