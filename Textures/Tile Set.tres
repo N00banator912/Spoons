@@ -22,6 +22,14 @@
 texture = ExtResource("1_2ag1c")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:2/0 = 0
+2:1/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+1:2/0 = 0
+0:2/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1ve4l"]
 texture = ExtResource("2_rjmrs")
@@ -75,6 +83,14 @@ texture_region_size = Vector2i(32, 32)
 texture = ExtResource("7_fgl71")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+2:1/0 = 0
+2:2/0 = 0
+1:2/0 = 0
+0:2/0 = 0
+0:1/0 = 0
+1:1/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8vc31"]
 texture = ExtResource("8_8jkbj")
@@ -85,6 +101,14 @@ texture_region_size = Vector2i(32, 32)
 texture = ExtResource("9_u8h53")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
+1:1/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+2:1/0 = 0
+2:2/0 = 0
+0:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nhaop"]
 texture = ExtResource("10_8asq0")
@@ -95,6 +119,14 @@ texture_region_size = Vector2i(32, 32)
 texture = ExtResource("11_qyllx")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+2:1/0 = 0
+2:2/0 = 0
+1:2/0 = 0
+1:1/0 = 0
+0:1/0 = 0
+0:2/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mdd1b"]
 texture = ExtResource("12_82eus")
