@@ -10,6 +10,16 @@ config_version=5
 
 [application]
 
+config/name="Spoons"
+config/version="0.0.0"
+config/features=PackedStringArray("4.3", "GL Compatibility")
+config/icon="res://icon.svg"
+
+[file_customization]
+
+folder_colors={
+"res://Textures/": "orange"
+=======
 config/name="Not Enough Spoons"
 config/features=PackedStringArray("4.3", "Mobile")
 config/icon="res://icon.svg"
@@ -54,5 +64,8 @@ action={
 
 [rendering]
 
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+=======
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="mobile"
