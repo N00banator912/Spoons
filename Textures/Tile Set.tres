@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=35 format=3 uid="uid://bx847j7mpcdbe"]
+[gd_resource type="TileSet" load_steps=41 format=3 uid="uid://bx847j7mpcdbe"]
 
 [ext_resource type="Texture2D" uid="uid://dbck25ms8kwwe" path="res://Textures/Sprites/Cobble.png" id="1_2ag1c"]
 [ext_resource type="Texture2D" uid="uid://kbv8jw4ohmfk" path="res://Textures/Sprites/CornerMask.png" id="2_rjmrs"]
@@ -13,7 +13,10 @@
 [ext_resource type="Texture2D" uid="uid://so6pd4titwf6" path="res://Textures/Sprites/Log_Base.png" id="9_nxl2w"]
 [ext_resource type="Texture2D" uid="uid://cr1qo1f12f6e5" path="res://Textures/Sprites/Grass.png" id="9_u8h53"]
 [ext_resource type="Texture2D" uid="uid://bwg0icjdihd2g" path="res://Textures/Sprites/Hardwood.png" id="10_8asq0"]
+[ext_resource type="Texture2D" uid="uid://ds0qt7l0qalvo" path="res://Textures/Sprites/Fence_C.png" id="10_281hr"]
 [ext_resource type="Texture2D" uid="uid://2b8gjo416vhr" path="res://Textures/Sprites/Moss.png" id="11_qyllx"]
+[ext_resource type="Texture2D" uid="uid://bw4u6tm364qxt" path="res://Textures/Sprites/Fence_H.png" id="11_wciep"]
+[ext_resource type="Texture2D" uid="uid://cwbggoescbxj8" path="res://Textures/Sprites/Fence_V.png" id="12_17fwl"]
 [ext_resource type="Texture2D" uid="uid://bhhfj73mtrnim" path="res://Textures/Sprites/Planks.png" id="12_82eus"]
 [ext_resource type="Texture2D" uid="uid://df87sbn7mfoqm" path="res://Textures/Sprites/VendingMachine.png" id="13_sbq16"]
 [ext_resource type="Texture2D" uid="uid://bq6qqklyr7c5y" path="res://Textures/Sprites/WallMask.png" id="14_ovhjv"]
@@ -76,6 +79,21 @@ texture_region_size = Vector2i(32, 32)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h07qm"]
 texture = ExtResource("9_nxl2w")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_blufh"]
+texture = ExtResource("10_281hr")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_crkyn"]
+texture = ExtResource("11_wciep")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_epwlp"]
+texture = ExtResource("12_17fwl")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 
@@ -163,3 +181,6 @@ sources/13 = SubResource("TileSetAtlasSource_qqvi4")
 sources/14 = SubResource("TileSetAtlasSource_uh2eh")
 sources/15 = SubResource("TileSetAtlasSource_jsfii")
 sources/16 = SubResource("TileSetAtlasSource_h07qm")
+sources/17 = SubResource("TileSetAtlasSource_blufh")
+sources/18 = SubResource("TileSetAtlasSource_crkyn")
+sources/19 = SubResource("TileSetAtlasSource_epwlp")
