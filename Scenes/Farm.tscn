@@ -1,21 +1,14 @@
-[gd_scene load_steps=7 format=4 uid="uid://d0kqntma3e7v4"]
+[gd_scene load_steps=6 format=4 uid="uid://d0kqntma3e7v4"]
 
-[ext_resource type="TileSet" uid="uid://p4hn6jmabwlp" path="res://Textures/Tile Set.tres" id="1_wwvjx"]
-[ext_resource type="Texture2D" uid="uid://dbck25ms8kwwe" path="res://Textures/Sprites/Cobble.png" id="2_b7sla"]
-[ext_resource type="Texture2D" uid="uid://gx8cxstkqpk0" path="res://Textures/Sprites/house.png" id="4_y5b4w"]
-[ext_resource type="PackedScene" uid="uid://djleb7rtunv3i" path="res://Scenes/player.tscn" id="5_cr6nn"]
+[ext_resource type="TileSet" uid="uid://bx847j7mpcdbe" path="res://Textures/Tile Set.tres" id="1_wwvjx"]
+[ext_resource type="Texture2D" uid="uid://gx8cxstkqpk0" path="res://Textures/Sprites/house.png" id="2_wkl8r"]
+[ext_resource type="PackedScene" uid="uid://djleb7rtunv3i" path="res://Scenes/player.tscn" id="3_nst2c"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c1cpa"]
-texture = ExtResource("2_b7sla")
-texture_region_size = Vector2i(32, 32)
-0:0/0 = 0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jxsky"]
+size = Vector2(177, 141)
 
-[sub_resource type="TileSet" id="TileSet_tv2tn"]
-tile_size = Vector2i(32, 32)
-physics_layer_0/collision_layer = 4
-physics_layer_0/collision_mask = 7
-sources/2 = SubResource("TileSetAtlasSource_c1cpa")
+[sub_resource type="CircleShape2D" id="CircleShape2D_o6ffh"]
+radius = 36.0555
 
 [node name="Farm" type="Node2D"]
 
@@ -50,3 +43,30 @@ tile_set = ExtResource("1_wwvjx")
 [node name="Flora 2" type="TileMapLayer" parent="Water/Ground/Obstacles"]
 tile_map_data = PackedByteArray("AAAAAAMADQABAAIAAAABAAMADQACAAIAAAAnAPX/DQACAAEAAAAnAPT/DQACAAAAAAAGAPf/DQACAAEAAAAEAPf/DQAAAAEAAAA=")
 tile_set = ExtResource("1_wwvjx")
+
+[node name="House" type="StaticBody2D" parent="."]
+collision_layer = 4
+collision_mask = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="House"]
+position = Vector2(703, -256)
+texture = ExtResource("2_wkl8r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="House"]
+position = Vector2(702.5, -256.5)
+shape = SubResource("RectangleShape2D_jxsky")
+
+[node name="Door" type="Area2D" parent="House"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="House/Door"]
+position = Vector2(670, -191)
+shape = SubResource("CircleShape2D_o6ffh")
+debug_color = Color(0.857077, 0.234665, 0.699939, 0.42)
+
+[node name="Player" parent="." instance=ExtResource("3_nst2c")]
+position = Vector2(559, -225)
+collision_mask = 5
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(23, 30)
+zoom = Vector2(1.2, 1.2)
