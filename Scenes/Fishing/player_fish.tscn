@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://qn101jeboxfy"]
+
+[ext_resource type="Script" path="res://Script/player_fish.gd" id="1_n5wib"]
+[ext_resource type="Texture2D" uid="uid://oceh12tivjdf" path="res://Assets/Sprites/placeholder_cir.png" id="2_d1nr4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kqut0"]
+radius = 15.5
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4v7hl"]
+radius = 18.0
+
+[node name="Player - Fish" type="CharacterBody2D"]
+collision_mask = 15
+script = ExtResource("1_n5wib")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0)
+shape = SubResource("CircleShape2D_kqut0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_d1nr4")
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("CircleShape2D_4v7hl")
+debug_color = Color(0.382648, 0.473974, 1, 0.42)
+
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]

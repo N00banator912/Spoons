@@ -1,0 +1,98 @@
+[gd_scene load_steps=7 format=4 uid="uid://xk1br2f6yk7f"]
+
+[ext_resource type="Script" path="res://Script/fishing_minigame.gd" id="1_73wju"]
+[ext_resource type="TileSet" uid="uid://c5ocvrk4k47mh" path="res://Textures/fishing_minigame.tres" id="1_nlfx2"]
+[ext_resource type="Texture2D" uid="uid://cnomhtq47llmj" path="res://Assets/Sprites/fish placeholder.png" id="1_ome1p"]
+[ext_resource type="PackedScene" uid="uid://c5c0njharkv4t" path="res://Scenes/Fishing/fish.tscn" id="2_lfotg"]
+[ext_resource type="PackedScene" uid="uid://qn101jeboxfy" path="res://Scenes/Fishing/player_fish.tscn" id="2_vpdgt"]
+
+[sub_resource type="Curve2D" id="Curve2D_t6pc6"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -32, 87, 0, 0, 0, 0, -161, 88, 0, 0, 0, 0, -160, -90, 0, 0, 0, 0, -35, -91)
+}
+point_count = 4
+
+[node name="Fishing Minigame" type="Node2D"]
+script = ExtResource("1_73wju")
+fish_scene = ExtResource("2_lfotg")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+z_index = 1
+zoom = Vector2(3, 3)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(41, -14)
+texture = ExtResource("1_ome1p")
+
+[node name="Player - Fish" parent="." instance=ExtResource("2_vpdgt")]
+z_index = 1
+position = Vector2(-79, 1)
+scale = Vector2(0.5, 0.5)
+
+[node name="Layers" type="Node" parent="."]
+
+[node name="Dirt" type="TileMapLayer" parent="Layers"]
+z_index = -10
+tile_map_data = PackedByteArray("AAAEAAIABQABAAEAAAAEAAEABQABAAEAAAAEAAAABQABAAEAAAAEAP//BQABAAEAAAAEAP7/BQABAAEAAAAEAP3/BQABAAEAAAADAAIABQABAAEAAAADAAEABQABAAEAAAADAAAABQABAAEAAAADAP//BQABAAEAAAADAP7/BQABAAEAAAADAP3/BQABAAEAAAACAAIABQABAAEAAAACAAEABQABAAEAAAACAAAABQABAAEAAAACAP//BQABAAEAAAACAP7/BQABAAEAAAACAP3/BQABAAEAAAABAAIABQABAAEAAAABAAEABQABAAEAAAABAAAABQABAAEAAAABAP//BQABAAEAAAABAP7/BQABAAEAAAABAP3/BQABAAEAAAAAAAIABQABAAEAAAAAAAEABQABAAEAAAAAAAAABQABAAEAAAAAAP//BQABAAEAAAAAAP7/BQABAAEAAAAAAP3/BQABAAEAAAD//wIABQABAAEAAAD//wEABQABAAEAAAD//wAABQABAAEAAAD/////BQABAAEAAAD///7/BQABAAEAAAD///3/BQABAAEAAAD+/wIABQABAAEAAAD+/wEABQABAAEAAAD+/wAABQABAAEAAAD+////BQABAAEAAAD+//7/BQABAAEAAAD+//3/BQABAAEAAAD9/wIABQABAAEAAAD9/wEABQABAAEAAAD9/wAABQABAAEAAAD9////BQABAAEAAAD9//7/BQABAAEAAAD9//3/BQABAAEAAAD8/wIABQABAAEAAAD8/wEABQABAAEAAAD8/wAABQABAAEAAAD8////BQABAAEAAAD8//7/BQABAAEAAAD8//3/BQABAAEAAAAFAAMABQABAAEAAAAFAAIABQABAAEAAAAFAAEABQABAAEAAAAFAAAABQABAAEAAAAFAP//BQABAAEAAAAFAP7/BQABAAEAAAAFAP3/BQABAAEAAAAFAPz/BQABAAAAAAAEAAMABQABAAEAAAAEAPz/BQABAAAAAAADAAMABQABAAEAAAADAPz/BQABAAAAAAACAAMABQABAAEAAAACAPz/BQABAAAAAAABAAMABQABAAEAAAABAPz/BQABAAAAAAAAAAMABQABAAEAAAAAAPz/BQABAAAAAAD//wMABQABAAEAAAD///z/BQABAAAAAAD+/wMABQABAAEAAAD+//z/BQABAAAAAAD9/wMABQABAAEAAAD9//z/BQABAAAAAAD8/wMABQABAAEAAAD8//z/BQABAAAAAAD7/wMABQABAAEAAAD7/wIABQABAAEAAAD7/wEABQABAAEAAAD7/wAABQABAAEAAAD7////BQABAAEAAAD7//7/BQABAAEAAAD7//3/BQABAAEAAAD7//z/BQABAAAAAAAGAAQABQACAAIAAAAGAAMABQACAAEAAAAGAAIABQACAAEAAAAGAAEABQACAAEAAAAGAAAABQACAAEAAAAGAP//BQACAAEAAAAGAP7/BQACAAEAAAAGAP3/BQACAAEAAAAGAPz/BQACAAAAAAAFAAQABQABAAIAAAAEAAQABQABAAIAAAADAAQABQABAAIAAAACAAQABQABAAIAAAABAAQABQABAAIAAAAAAAQABQABAAIAAAD//wQABQABAAIAAAD+/wQABQABAAIAAAD9/wQABQABAAIAAAD8/wQABQABAAIAAAD7/wQABQABAAIAAAD6/wQABQABAAIAAAD6/wMABQABAAEAAAD6/wIABQABAAEAAAD6/wEABQABAAEAAAD6/wAABQABAAEAAAD6////BQABAAEAAAD6//7/BQABAAEAAAD6//3/BQABAAEAAAD6//z/BQABAAAAAAD5/wQABQABAAIAAAD5/wMABQABAAEAAAD5/wIABQABAAEAAAD5/wEABQABAAEAAAD5/wAABQABAAEAAAD5////BQABAAEAAAD5//7/BQABAAEAAAD5//3/BQABAAEAAAD5//z/BQABAAAAAAD4/wQABQAAAAIAAAD4/wMABQAAAAEAAAD4/wIABQAAAAEAAAD4/wEABQAAAAEAAAD4/wAABQAAAAEAAAD4////BQAAAAEAAAD4//7/BQAAAAEAAAD4//3/BQAAAAEAAAD4//z/BQAAAAAAAAA=")
+tile_set = ExtResource("1_nlfx2")
+
+[node name="Cobble" type="TileMapLayer" parent="Layers"]
+z_index = -9
+scale = Vector2(1, 1.00452)
+tile_map_data = PackedByteArray("AAD//wMABAACAAEAAFD//wIABAABAAEAAAD//wEABAABAAEAAAD//wAABAABAAEAAAD+/wMABAACAAEAAFD+/wIABAABAAEAAAD+/wEABAABAAEAAAD+/wAABAABAAEAAAD9/wMABAACAAEAAFD9/wIABAABAAEAAAD9/wEABAABAAEAAAD9/wAABAABAAEAAAD8/wMABAACAAEAAFD8/wIABAABAAEAAAD8/wEABAABAAEAAAD8/wAABAABAAEAAAD7/wMABAACAAEAAFD7/wIABAABAAEAAAD7/wEABAABAAEAAAD7/wAABAABAAEAAAD/////BAABAAEAAAD+////BAABAAEAAAD9////BAABAAEAAAD8////BAABAAEAAAD7////BAABAAEAAAAAAP//BAACAAEAAAAAAAAABAACAAEAAAAAAAEABAACAAEAAAAAAAIABAACAAEAAAAAAAMABAACAAEAAAAAAP7/BAACAAEAAAD///7/BAABAAEAAAD+//7/BAABAAEAAAD9//7/BAABAAEAAAD8//7/BAABAAEAAAD7//7/BAABAAEAAAD6////BAACAAEAADD6/wAABAACAAEAADD6/wEABAACAAEAADD6/wIABAACAAEAADD6/wMABAACAAEAAFD6//7/BAACAAEAADAAAP3/BAACAAEAAAD7//3/BAABAAEAAAD8//3/BAABAAEAAAD9//3/BAABAAEAAAD+//3/BAABAAEAAAD///3/BAABAAEAAAD///z/BAACAAEAAGD+//z/BAACAAEAAGD9//z/BAACAAEAAGD8//z/BAACAAEAAGD7//z/BAACAAEAAGD6//z/BAACAAEAAGD6//3/BAACAAEAADAAAPz/BAACAAEAAAA=")
+tile_set = ExtResource("1_nlfx2")
+
+[node name="Water" type="TileMapLayer" parent="Layers"]
+z_index = -7
+tile_map_data = PackedByteArray("AAD8/wAAAQAAAAAAAAD9////AQAAAAAAAAD9/wAAAQAAAAAAAAD+////AQAAAAAAAAD7////AQAAAAAAAAD7/wAAAQAAAAAAAAD8////AQAAAAAAAAD7//7/AQAAAAAAAAD7//z/AQAAAAAAAAD7//3/AQAAAAAAAAD8//z/AQAAAAAAAAD8//7/AQAAAAAAAAD9//3/AQAAAAAAAAD9//7/AQAAAAAAAAD+//3/AQAAAAAAAAD9/wIAAQAAAAAAAAD+/wEAAQAAAAAAAAD+/wIAAQAAAAAAAAD//wEAAQAAAAAAAAD7/wEAAQAAAAAAAAD7/wIAAQAAAAAAAAD8/wEAAQAAAAAAAAD+//7/AQAAAAAAAAD///3/AQAAAAAAAAD8/wIAAQAAAAAAAAD9/wEAAQAAAAAAAAD+/wAAAQAAAAAAAAD8//3/AQAAAAAAAAD9//z/AQAAAAAAAAD+//z/AQAAAAAAAAD///z/AQAAAAAAAAD///7/AQAAAAAAAAD/////AQAAAAAAAAD//wAAAQAAAAAAAAD//wIAAQAAAAAAAAD//wMAAQAAAAAAAAD+/wMAAQAAAAAAAAD9/wMAAQAAAAAAAAD8/wMAAQAAAAAAAAD7/wMAAQAAAAAAAAA=")
+tile_set = ExtResource("1_nlfx2")
+
+[node name="Timers" type="Node" parent="."]
+
+[node name="FishTimer" type="Timer" parent="Timers"]
+wait_time = 5.0
+
+[node name="StartTimer" type="Timer" parent="Timers"]
+one_shot = true
+
+[node name="CatchTimer" type="Timer" parent="Timers"]
+wait_time = 3.0
+
+[node name="StartPos" type="Marker2D" parent="."]
+position = Vector2(-50, 0)
+
+[node name="FishPath" type="Path2D" parent="."]
+curve = SubResource("Curve2D_t6pc6")
+
+[node name="FishSpawnLoc" type="PathFollow2D" parent="FishPath"]
+position = Vector2(-32, 87)
+rotation = 3.13384
+
+[node name="HUD" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="ScoreLabel" type="Label" parent="HUD"]
+z_index = 1
+offset_left = -61.0
+offset_top = -88.0
+offset_right = 64.0
+offset_bottom = -65.0
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 16
+text = "Score: 10000000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Message" type="Label" parent="HUD"]
+offset_left = -42.0
+offset_top = 34.0
+offset_right = 41.0
+offset_bottom = 57.0
+theme_override_constants/outline_size = 2
+text = "Get Ready!"
+
+[connection signal="hit" from="Player - Fish" to="." method="_on_player__fish_hit"]
+[connection signal="timeout" from="Timers/FishTimer" to="." method="_on_fish_timer_timeout"]
+[connection signal="timeout" from="Timers/StartTimer" to="." method="_on_start_timer_timeout"]
+[connection signal="timeout" from="Timers/CatchTimer" to="." method="_on_catch_timer_timeout"]
