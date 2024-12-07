@@ -1,3 +1,5 @@
+
+
 shader_type canvas_item;
 
 void vertex() {
@@ -5,9 +7,15 @@ void vertex() {
 }
 
 void fragment() {
+	float windspeed = 1.0f;
+	float windDirection = 32.0f; // Angle in Degrees
+	
 	vec2 pos = UV;
-	pos.x = pos.x + (TIME *-0.10);
-	pos.y = pos.y + (TIME *-0.10);
+	
+	float xComp = 0.5f;
+	float yComp = 0.5f;
+	pos.x = pos.x + (TIME * xComp * windspeed);
+	pos.y = pos.y + (TIME * yComp * windspeed);
 	COLOR = texture(TEXTURE, pos);
 }
 
