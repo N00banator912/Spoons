@@ -24,9 +24,11 @@ var hasExercised = false
 var passoutPenalty = -2
 var playerPassedOut = false
 
+var medicationBonus = 3
+var hasMedicated = false
+
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var hurt_box_coll: CollisionShape2D = $HurtBox/CollisionShape2D
-
 
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("action"):
