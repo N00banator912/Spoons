@@ -78,22 +78,6 @@ position = Vector2(670, -191)
 shape = SubResource("CircleShape2D_o6ffh")
 debug_color = Color(0.857077, 0.234665, 0.699939, 0.42)
 
-[node name="GUI" type="CanvasLayer" parent="."]
-layer = 128
-follow_viewport_enabled = true
-
-[node name="Gold" type="Label" parent="GUI"]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -192.0
-offset_bottom = 88.0
-grow_horizontal = 0
-text = "0000"
-label_settings = SubResource("LabelSettings_5x0m5")
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="Player" parent="." instance=ExtResource("3_nst2c")]
 position = Vector2(559, -225)
 collision_mask = 5
@@ -101,3 +85,21 @@ collision_mask = 5
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(23, 30)
 zoom = Vector2(1.2, 1.2)
+
+[node name="GUI" type="CanvasLayer" parent="."]
+
+[node name="Gold" type="Label" parent="GUI"]
+custom_minimum_size = Vector2(192, 88)
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -192.0
+offset_top = -88.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "0000"
+label_settings = SubResource("LabelSettings_5x0m5")
+horizontal_alignment = 1
+vertical_alignment = 1

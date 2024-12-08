@@ -10,7 +10,7 @@ radius = 15.5
 radius = 18.0
 
 [node name="Player - Fish" type="CharacterBody2D"]
-collision_mask = 15
+collision_mask = 2
 script = ExtResource("1_n5wib")
 metadata/_edit_lock_ = true
 
@@ -22,7 +22,8 @@ shape = SubResource("CircleShape2D_kqut0")
 texture = ExtResource("2_d1nr4")
 
 [node name="Hitbox" type="Area2D" parent="."]
-collision_mask = 3
+collision_layer = 4
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 shape = SubResource("CircleShape2D_4v7hl")

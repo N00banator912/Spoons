@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=4 uid="uid://xk1br2f6yk7f"]
+[gd_scene load_steps=8 format=4 uid="uid://xk1br2f6yk7f"]
 
 [ext_resource type="Script" path="res://Script/fishing_minigame.gd" id="1_73wju"]
 [ext_resource type="TileSet" uid="uid://c5ocvrk4k47mh" path="res://Textures/fishing_minigame.tres" id="1_nlfx2"]
 [ext_resource type="Texture2D" uid="uid://cnomhtq47llmj" path="res://Assets/Sprites/fish placeholder.png" id="1_ome1p"]
 [ext_resource type="PackedScene" uid="uid://c5c0njharkv4t" path="res://Scenes/Fishing/fish.tscn" id="2_lfotg"]
 [ext_resource type="PackedScene" uid="uid://qn101jeboxfy" path="res://Scenes/Fishing/player_fish.tscn" id="2_vpdgt"]
+[ext_resource type="Script" path="res://Scenes/Fishing/fishing_hud.gd" id="6_7hos1"]
 
 [sub_resource type="Curve2D" id="Curve2D_t6pc6"]
 _data = {
@@ -54,10 +55,18 @@ tile_set = ExtResource("1_nlfx2")
 wait_time = 5.0
 
 [node name="StartTimer" type="Timer" parent="Timers"]
+process_mode = 3
+wait_time = 2.0
 one_shot = true
 
 [node name="CatchTimer" type="Timer" parent="Timers"]
+process_mode = 3
 wait_time = 3.0
+
+[node name="MessageTimer" type="Timer" parent="Timers"]
+process_mode = 3
+wait_time = 2.0
+one_shot = true
 
 [node name="StartPos" type="Marker2D" parent="."]
 position = Vector2(-50, 0)
@@ -71,6 +80,7 @@ rotation = 3.13384
 
 [node name="HUD" type="CanvasLayer" parent="."]
 follow_viewport_enabled = true
+script = ExtResource("6_7hos1")
 
 [node name="ScoreLabel" type="Label" parent="HUD"]
 z_index = 1
@@ -96,3 +106,4 @@ text = "Get Ready!"
 [connection signal="timeout" from="Timers/FishTimer" to="." method="_on_fish_timer_timeout"]
 [connection signal="timeout" from="Timers/StartTimer" to="." method="_on_start_timer_timeout"]
 [connection signal="timeout" from="Timers/CatchTimer" to="." method="_on_catch_timer_timeout"]
+[connection signal="timeout" from="Timers/MessageTimer" to="HUD" method="_on_message_timer_timeout"]

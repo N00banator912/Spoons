@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @onready var hitbox: CollisionShape2D = $Hitbox/CollisionShape2D
+@onready var yourself: CollisionShape2D = $CollisionShape2D
 
 const SPEED = 200.0
 
@@ -21,8 +22,10 @@ func _ready():
 	#hide()
 
 func _on_hitbox_body_entered(body: Node2D) -> void:
-	hit.emit()
-	hitbox.set_deferred("disabled", true)
+	print(str(body))
+	if body != yourself || body != hitbox:
+		hit.emit()
+		#hitbox.set_deferred("disabled", true)
 
 func start(pos):
 	position = pos

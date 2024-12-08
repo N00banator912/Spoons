@@ -20,9 +20,6 @@ func _physics_process(delta: float) -> void:
 	if coll_info:
 		fish.linear_velocity = fish.linear_velocity.bounce(coll_info.get_normal())
 
-func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
-	#queue_free()
-	pass
 
 func minigame_setup():
 	#Based on the difficulty of the fish, we create an

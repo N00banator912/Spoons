@@ -2,7 +2,7 @@ extends Node2D
 
 @export var fish_scene: PackedScene
 var score
-const MAXFISH = 5 
+const MAXFISH = 3
 
 signal miniGame
 
@@ -12,32 +12,34 @@ signal miniGame
 @onready var start_pos: Marker2D = $StartPos
 @onready var player: CharacterBody2D = $"Player - Fish"
 @onready var start_timer: Timer = $Timers/StartTimer
+@onready var message_timer: Timer = $Timers/MessageTimer
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	get_tree().paused = true
 	score = 0
 	player.start(start_pos.position)
 	start_timer.start()
+	message_timer.start()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
 
 func _on_player__fish_hit() -> void:
-	#wvar diff = fish_scene.get_difficulty()
 	catch_timer.start()
-	#get_tree().paused = true
+	get_tree().paused = true
 	
 
 func _on_catch_timer_timeout() -> void:
+	get_tree().paused = false
 	pass
 
 func _on_fish_timer_timeout() -> void:
 	#Every time the fish timer times out, we spawn a fish.
 	if get_tree().get_nodes_in_group("fish").size() < MAXFISH:
 		var fish = fish_scene.instantiate()
-	
 		#Choose the location on the Path
 		fish_spawn_loc.progress_ratio = randf()
 	
@@ -57,4 +59,5 @@ func _on_fish_timer_timeout() -> void:
 
 
 func _on_start_timer_timeout() -> void:
+	get_tree().paused = false
 	fish_timer.start()
