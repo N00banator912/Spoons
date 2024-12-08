@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=4 uid="uid://d0kqntma3e7v4"]
+[gd_scene load_steps=8 format=4 uid="uid://d0kqntma3e7v4"]
 
 [ext_resource type="TileSet" uid="uid://bx847j7mpcdbe" path="res://Textures/Tile Set.tres" id="1_wwvjx"]
 [ext_resource type="Texture2D" uid="uid://gx8cxstkqpk0" path="res://Textures/Sprites/house.png" id="2_wkl8r"]
 [ext_resource type="PackedScene" uid="uid://djleb7rtunv3i" path="res://Scenes/player.tscn" id="3_nst2c"]
+[ext_resource type="FontFile" uid="uid://q07qnbqsx4hs" path="res://Fonts/Code.ttf" id="4_f6sd2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jxsky"]
 size = Vector2(177, 141)
@@ -11,6 +12,7 @@ size = Vector2(177, 141)
 radius = 36.0555
 
 [sub_resource type="LabelSettings" id="LabelSettings_5x0m5"]
+font = ExtResource("4_f6sd2")
 font_size = 64
 font_color = Color(0.976471, 0.760784, 0.168627, 1)
 outline_size = 2
@@ -76,6 +78,22 @@ position = Vector2(670, -191)
 shape = SubResource("CircleShape2D_o6ffh")
 debug_color = Color(0.857077, 0.234665, 0.699939, 0.42)
 
+[node name="GUI" type="CanvasLayer" parent="."]
+layer = 128
+follow_viewport_enabled = true
+
+[node name="Gold" type="Label" parent="GUI"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -192.0
+offset_bottom = 88.0
+grow_horizontal = 0
+text = "0000"
+label_settings = SubResource("LabelSettings_5x0m5")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Player" parent="." instance=ExtResource("3_nst2c")]
 position = Vector2(559, -225)
 collision_mask = 5
@@ -83,26 +101,3 @@ collision_mask = 5
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(23, 30)
 zoom = Vector2(1.2, 1.2)
-
-[node name="GUI" type="CanvasLayer" parent="."]
-layer = 128
-offset = Vector2(960, 540)
-transform = Transform2D(1, 0, 0, 1, 960, 540)
-follow_viewport_enabled = true
-
-[node name="Gold" type="Label" parent="GUI"]
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -1108.0
-offset_top = -643.0
-offset_right = -962.0
-offset_bottom = -555.0
-grow_horizontal = 0
-grow_vertical = 0
-text = "0000"
-label_settings = SubResource("LabelSettings_5x0m5")
-horizontal_alignment = 1
-vertical_alignment = 1

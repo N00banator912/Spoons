@@ -1,6 +1,5 @@
 extends CharacterBody2D
 
-
 const SPEED = 200.0
 
 var isCrouch = false
@@ -29,6 +28,7 @@ var hasMedicated = false
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var hurt_box_coll: CollisionShape2D = $HurtBox/CollisionShape2D
+@onready var gold_text: Label = get_node("GUI/Gold")
 
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("action"):
@@ -97,5 +97,9 @@ func Sleep() -> void:
 	else: 		# Start Next Day
 		spoons = maxSpoons
 		
-func Die():
+func Die() -> void:
 	print_debug("Oops, you died")
+	
+func UpdateGold(delta) -> void:
+	gold += delta
+	gold_text.text = str(gold) 
