@@ -26,9 +26,20 @@ var playerPassedOut = false
 var medicationBonus = 3
 var hasMedicated = false
 
+# Components
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var hurt_box_coll: CollisionShape2D = $HurtBox/CollisionShape2D
-@onready var gold_text: Label = get_node("GUI/Gold")
+
+# UI Elements
+@onready var gold_text: Label = get_node("GUI/Background/Gold")
+@onready var spoon_back: BoxContainer = get_node("GUI/Background/Spoons")
+@onready var spoon_fore: BoxContainer = get_node("GUI/Background/Spoons/CurrSpoons")
+
+# Textures
+@onready var spoon_tex_empty: Image = Image.load_from_file("res://Textures/UI/Spoon_Empty.png")
+@onready var spoon_tex_broken: Image = Image.load_from_file("res://Textures/UI/Spoon_Broken.png")
+@onready var spoon_tex_full: Image = Image.load_from_file("res://Textures/UI/Spoon.png")
+
 
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("action"):
@@ -102,4 +113,24 @@ func Die() -> void:
 	
 func UpdateGold(delta) -> void:
 	gold += delta
-	gold_text.text = str(gold) 
+	gold_text.text = str(gold)
+	
+func UpdateSpoons(delta) -> void:
+	spoons += delta
+	var visibleSpoons = ceil(maxSpoons / 2)
+	var temp = CanvasTexture.new()
+	
+	# Add Blank Spoons for Background
+	temp.texture = spoon_tex_empty
+	for i in visibleSpoons:
+		spoon_back.add_child(temp)
+	
+	# Add Guaranteed Full Spoons
+	temp.texture = spoon_tex_full
+	for i in (spoons / 2) - 1:
+		spoon_fore.add_child(temp)
+	
+	# Check Final Spoon Slot
+	if (!spoons % 2 == 0):
+		temp.texture = spoon_tex_broken
+	spoon_fore.add_child(temp)
