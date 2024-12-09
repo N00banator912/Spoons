@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://blknyispmlfpt" path="res://Textures/Sprites/Bed_Unmade.png" id="2_jga1g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0wmpa"]
-size = Vector2(73, 13)
+size = Vector2(73, 28)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4tmxa"]
 animations = [{
@@ -28,7 +28,7 @@ animations = [{
 [node name="Bed" type="StaticBody2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, 2.5)
+position = Vector2(-0.5, 3)
 shape = SubResource("RectangleShape2D_0wmpa")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]

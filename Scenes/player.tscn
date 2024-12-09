@@ -160,6 +160,7 @@ radius = 12.0
 height = 60.0
 
 [node name="Player" type="CharacterBody2D"]
+z_index = 1
 script = ExtResource("1_3hpdk")
 
 [node name="PlayerBox" type="CollisionShape2D" parent="."]
