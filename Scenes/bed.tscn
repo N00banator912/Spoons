@@ -1,9 +1,29 @@
-[gd_scene load_steps=3 format=3 uid="uid://dgg1s1iwdc47n"]
+[gd_scene load_steps=5 format=3 uid="uid://dgg1s1iwdc47n"]
 
 [ext_resource type="Texture2D" uid="uid://d1bisjmqs3ij2" path="res://Textures/Sprites/Bed.png" id="1_dvngu"]
+[ext_resource type="Texture2D" uid="uid://blknyispmlfpt" path="res://Textures/Sprites/Bed_Unmade.png" id="2_jga1g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0wmpa"]
 size = Vector2(73, 13)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4tmxa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_dvngu")
+}],
+"loop": true,
+"name": &"made",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_jga1g")
+}],
+"loop": true,
+"name": &"unmade",
+"speed": 5.0
+}]
 
 [node name="Bed" type="StaticBody2D"]
 
@@ -11,6 +31,7 @@ size = Vector2(73, 13)
 position = Vector2(-0.5, 2.5)
 shape = SubResource("RectangleShape2D_0wmpa")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(1.2, 1.2)
-texture = ExtResource("1_dvngu")
+sprite_frames = SubResource("SpriteFrames_4tmxa")
+animation = &"made"
