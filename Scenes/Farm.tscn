@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://d0kqntma3e7v4"]
+[gd_scene load_steps=11 format=4 uid="uid://d0kqntma3e7v4"]
 
 [ext_resource type="TileSet" uid="uid://bx847j7mpcdbe" path="res://Textures/Tile Set.tres" id="1_wwvjx"]
 [ext_resource type="Texture2D" uid="uid://gx8cxstkqpk0" path="res://Textures/Sprites/house.png" id="2_wkl8r"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://djleb7rtunv3i" path="res://Scenes/player.tscn" id="3_nst2c"]
 [ext_resource type="Texture2D" uid="uid://da6dc1ifm4mnv" path="res://Textures/UI/Coin_0.png" id="4_74reu"]
 [ext_resource type="FontFile" uid="uid://q07qnbqsx4hs" path="res://Fonts/Code.ttf" id="4_f6sd2"]
+[ext_resource type="PackedScene" uid="uid://jtnsvntpvkms" path="res://Scenes/vending_machine.tscn" id="7_xqrl7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jxsky"]
 size = Vector2(177, 141)
@@ -123,9 +124,12 @@ offset_bottom = -338.0
 layout_mode = 2
 
 [node name="Player" parent="." instance=ExtResource("3_nst2c")]
-position = Vector2(559, -225)
+position = Vector2(600, 500)
 collision_mask = 5
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(23, 30)
 zoom = Vector2(1.2, 1.2)
+
+[node name="Node2D" parent="." instance=ExtResource("7_xqrl7")]
+position = Vector2(593, -256)

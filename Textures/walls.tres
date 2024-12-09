@@ -1,0 +1,22 @@
+[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://bpnd68kl1y1np"]
+
+[ext_resource type="Texture2D" uid="uid://kbv8jw4ohmfk" path="res://Textures/Sprites/CornerMask.png" id="1_jg0ql"]
+[ext_resource type="Texture2D" uid="uid://bq6qqklyr7c5y" path="res://Textures/Sprites/WallMask.png" id="2_fpvky"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y3hhx"]
+texture = ExtResource("1_jg0ql")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-0.396851, 16, -0.396851, -0.396851, 16, -0.595276, 16, -16, -16, -16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8rj64"]
+texture = ExtResource("2_fpvky")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, -16, -0.25, 16, 0, 16, -16)
+
+[resource]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 2
+sources/2 = SubResource("TileSetAtlasSource_y3hhx")
+sources/3 = SubResource("TileSetAtlasSource_8rj64")

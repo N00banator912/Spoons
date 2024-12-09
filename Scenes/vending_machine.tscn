@@ -3,12 +3,12 @@
 [ext_resource type="Texture2D" uid="uid://df87sbn7mfoqm" path="res://Textures/Sprites/VendingMachine.png" id="1_n82l1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3yeew"]
-size = Vector2(28, 62)
+size = Vector2(30, 63)
 
 [node name="Node2D" type="StaticBody2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 1)
+position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_3yeew")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

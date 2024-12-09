@@ -80,5 +80,5 @@ shape = SubResource("RectangleShape2D_y40di")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_v7w4y")
-animation = &"state 0"
-autoplay = "state 0"
+animation = &"state 2"
+autoplay = "state 2"
